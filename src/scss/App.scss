@@ -1,0 +1,13 @@
+.App {
+  margin-bottom: 20px;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "./components/Header";
+@import "./components/Card";
