@@ -1,34 +1,45 @@
 import React from "react";
-import UserImg from "../images/account.svg";
 
-const Card = () => {
+const Card = ({ innerData, logo }) => {
   return (
     <article className="Card">
-      <img src={UserImg} alt="user" />
       <div className="Card_info">
-        <div className="Card_info-status">
-          <span className="Card_info-status-title-name">Photosnap</span>
-          <span className="Card_info-status-title-new">NEW!</span>
-          <span className="Card_info-status-title-featured">FEATURED</span>
-          <br />
+        <div className="Card_info-image">
+          <img src={logo} alt="user" />
         </div>
-        <h1>Senior Fronted Developer</h1>
-        <div className="Card_info-stats">
-          <small>1d ago </small>
-          <small> &middot; </small>
-          <small>Full Time </small>
-          <small> &middot; </small>
-          <small>USA only </small>
+
+        <div className="Card-text">
+          <div className="Card_info-status">
+            <span className="Card_info-status-title-name">
+              {innerData.company}
+            </span>
+            {innerData.new ? (
+              <span className="Card_info-status-title-new">NEW!</span>
+            ) : null}
+            {innerData.featured ? (
+              <span className="Card_info-status-title-featured">FEATURED</span>
+            ) : null}
+            <br />
+          </div>
+          <h1> {innerData.position} </h1>
+          <div className="Card_info-stats">
+            <small> {innerData.postedAt} </small>
+            <small> &middot; </small>
+            <small> {innerData.contract} </small>
+            <small> &middot; </small>
+            <small> {innerData.location} </small>
+          </div>
         </div>
+
         <hr />
       </div>
-
       <div className="Card_languages">
-        <span>Frontend</span>
-        <span>Senior</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+        {innerData.languages.map((lang) => (
+          <span>{lang}</span>
+        ))}
+        {innerData.tools.map((lang) => (
+          <span>{lang}</span>
+        ))}
       </div>
     </article>
   );

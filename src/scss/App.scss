@@ -1,13 +1,31 @@
 .App {
   margin-bottom: 20px;
 }
-
 .Main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 150px;
+}
+
+$breakpoints: (
+  sm: 320px,
+  md: 768,
+  lg: 1024px,
+);
+
+@mixin media-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "The value '#{$breakpoint}' is not declared";
+  }
 }
 
 @import "./components/Header";
 @import "./components/Card";
+@import "./components/Filter";
+@import "./components/AddedFilters";
