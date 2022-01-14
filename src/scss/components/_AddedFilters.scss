@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 40%;
+  margin-left: 20%;
   margin-top: 30px;
-  position: absolute;
-  max-width: 60vw;
+  max-width: 70vw;
+  max-height: 30vh;
+  position: relative;
+
   span {
-    background-color: white;
-    padding: 5px;
-    font-size: 1rem;
+    background-color: $Desaturated-Dark-Cyan;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 12px;
   }
 }

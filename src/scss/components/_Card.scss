@@ -6,7 +6,6 @@
   margin-bottom: 50px;
   height: 250px;
   box-shadow: 3px 10px 20px 1px $Desaturated-Dark-Cyan;
-  border-left: 5px solid $Desaturated-Dark-Cyan;
   border-radius: 5px;
   position: relative;
 
@@ -77,6 +76,14 @@
         color: white;
         padding: 10px;
         border-radius: 2rem;
+        &:hover {
+          background-color: transparent;
+          color: black;
+          cursor: pointer;
+        }
+      }
+      &-title-featured {
+        background-color: $Very-Dark-Grayish-Cyan;
       }
     }
     &-stats {
@@ -103,4 +110,8 @@
       margin-right: 25px;
     }
   }
+}
+
+.New {
+  border-left: 5px solid $Desaturated-Dark-Cyan;
 }

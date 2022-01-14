@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ innerData, logo }) => {
   return (
-    <article className="Card">
+    <article className={innerData.new ? `Card New` : "Card"}>
       <div className="Card_info">
         <div className="Card_info-image">
           <img src={logo} alt="user" />
@@ -34,6 +34,8 @@ const Card = ({ innerData, logo }) => {
         <hr />
       </div>
       <div className="Card_languages">
+        <span> {innerData.role} </span>
+        <span> {innerData.level} </span>
         {innerData.languages.map((lang) => (
           <span>{lang}</span>
         ))}

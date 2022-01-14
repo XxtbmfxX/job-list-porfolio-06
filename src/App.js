@@ -34,7 +34,7 @@ function App() {
         allow = response.includes(true);
       }
     }
-    console.log(allow);
+
     return allow;
   };
 
